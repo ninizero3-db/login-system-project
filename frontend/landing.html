@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM | Pambayang Dalubhasaan ng Marilao</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #fff8e7;
+            color: #321a12;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 14px 7%;
+
+            background: #7a1f1f;
+            border-bottom: 4px solid #f2c500;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .school-name {
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 1.2;
+        }
+
+        .school-name span {
+            display: block;
+            color: #f2c500;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #f2c500;
+        }
+
+        .login-btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            background: #f2c500;
+            color: #4a1212 !important;
+        }
+
+        .login-btn:hover {
+            background: white;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 80vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 70px 20px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #fffdf5 0%,
+                    #fff8e7 55%,
+                    #f5df9b 100%
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-logo {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+
+            margin-bottom: 20px;
+
+            filter: drop-shadow(0 8px 10px rgba(0,0,0,0.2));
+        }
+
+        .hero h1 {
+            color: #7a1f1f;
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .hero h2 {
+            color: #4a1212;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+
+            color: #5f514b;
+
+            font-size: 18px;
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .primary-btn {
+            background: #7a1f1f;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #4a1212;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            border: 2px solid #7a1f1f;
+            color: #7a1f1f;
+            background: white;
+        }
+
+        .secondary-btn:hover {
+            background: #7a1f1f;
+            color: white;
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            padding: 80px 7%;
+            text-align: center;
+            background: white;
+        }
+
+        .section-title {
+            color: #7a1f1f;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: #6b5b54;
+            margin-bottom: 45px;
+        }
+
+        .feature-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            width: 260px;
+
+            padding: 30px 25px;
+
+            background: #fff8e7;
+
+            border-radius: 12px;
+
+            border-top: 5px solid #f2c500;
+
+            box-shadow: 0 5px 18px rgba(74, 18, 18, 0.10);
+
+            transition: 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #7a1f1f;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #6b5b54;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            padding: 80px 10%;
+            text-align: center;
+
+            background: #7a1f1f;
+            color: white;
+        }
+
+        .about h2 {
+            color: #f2c500;
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           CALL TO ACTION
+        ========================= */
+
+        .cta {
+            padding: 70px 20px;
+
+            text-align: center;
+
+            background: #f2c500;
+        }
+
+        .cta h2 {
+            color: #4a1212;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #4a1212;
+            margin-bottom: 25px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+
+            padding: 14px 30px;
+
+            background: #7a1f1f;
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+        }
+
+        .cta-btn:hover {
+            background: #4a1212;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #321a12;
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 15px;
+        }
+
+        footer strong {
+            color: #f2c500;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            nav {
+                padding: 12px 5%;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a:not(.login-btn) {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero-logo {
+                width: 140px;
+                height: 140px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+            .school-name {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="logo-area">
+
+            <img src="pdmlogo.jpg" alt="PDM Logo">
+
+            <div class="school-name">
+
+                PAMBAYANG DALUBHASAAN
+                <span>NG MARILAO</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#features">Features</a>
+
+            <a href="#about">About</a>
+
+            <a href="index.html" class="login-btn">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <img
+                src="pdmlogo.jpg"
+                alt="Pambayang Dalubhasaan ng Marilao Logo"
+                class="hero-logo"
+            >
+
+            <h1>
+                Welcome to PDM
+            </h1>
+
+            <h2>
+                Pambayang Dalubhasaan ng Marilao
+            </h2>
+
+            <p>
+                Welcome to the PDM Online Student System.
+                Access your account, manage your information,
+                and securely access the system through your account.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="index.html" class="btn primary-btn">
+                    Get Started
+                </a>
+
+                <a href="#features" class="btn secondary-btn">
+                    Explore System
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================= -->
+
+    <section class="features" id="features">
+
+        <h2 class="section-title">
+            System Features
+        </h2>
+
+        <p class="section-subtitle">
+            Simple, accessible, and secure account management.
+        </p>
+
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Secure Login
+                </h3>
+
+                <p>
+                    Access your account using your registered
+                    email and password.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    👤
+                </div>
+
+                <h3>
+                    Registration
+                </h3>
+
+                <p>
+                    Create a new account and become a registered
+                    user of the system.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Dashboard
+                </h3>
+
+                <p>
+                    Access your personal dashboard after
+                    successfully logging in.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Account Security
+                </h3>
+
+                <p>
+                    User authentication helps protect account
+                    access and information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+
+        <h2>
+            About PDM Online System
+        </h2>
+
+        <p>
+            The PDM Online Student System is a web-based
+            authentication system designed to provide users
+            with a simple way to register, log in, and access
+            their account dashboard.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         CALL TO ACTION
+    ========================= -->
+
+    <section class="cta">
+
+        <h2>
+            Ready to Get Started?
+        </h2>
+
+        <p>
+            Log in to your account or create a new account.
+        </p>
+
+        <a href="index.html" class="cta-btn">
+            Enter System
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            <strong>Pambayang Dalubhasaan ng Marilao</strong>
+        </p>
+
+        <p>
+            PDM Online Student System
+        </p>
+
+        <p>
+            © 2026 All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
