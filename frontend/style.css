@@ -1,39 +1,383 @@
+/* =========================
+   PDM LOGIN SYSTEM
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8e7,
+            #f5df9b
+        );
+
+    color: #321a12;
 }
 
-.container {
-  background: white;
-  padding: 30px;
-  width: 320px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+/* =========================
+   PAGE
+   ========================= */
+
+.page {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
 }
 
-h2 {
-  text-align: center;
+
+/* =========================
+   SCHOOL HEADER
+   ========================= */
+
+.school-header {
+    text-align: center;
+
+    margin-bottom: 25px;
 }
+
+.school-title {
+    color: #7a1f1f;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.school-subtitle {
+    color: #7a1f1f;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    margin-top: 3px;
+}
+
+.school-line {
+    width: 80px;
+    height: 4px;
+
+    background: #f2c500;
+
+    margin: 10px auto;
+}
+
+.school-header p {
+    color: #6b5b54;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   AUTH CARD
+   ========================= */
+
+.auth-card {
+    width: 100%;
+    max-width: 430px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    border-top: 6px solid #7a1f1f;
+
+    box-shadow:
+        0 12px 35px rgba(74, 18, 18, 0.15);
+}
+
+
+/* =========================
+   CARD HEADER
+   ========================= */
+
+.card-header {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.card-header h1 {
+    color: #7a1f1f;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.card-header p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+.login-section,
+.register-section {
+    width: 100%;
+}
+
+.login-section h2,
+.register-section h2 {
+    color: #4a1212;
+
+    font-size: 20px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   LABELS
+   ========================= */
+
+label {
+    display: block;
+
+    color: #4a1212;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-top: 14px;
+
+    margin-bottom: 6px;
+}
+
+
+/* =========================
+   INPUTS
+   ========================= */
 
 input {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  box-sizing: border-box;
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d5c7bd;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: #fffdf8;
+
+    transition: 0.2s;
 }
 
-button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
-  cursor: pointer;
+input:focus {
+    border-color: #7a1f1f;
+
+    box-shadow:
+        0 0 0 3px rgba(242, 197, 0, 0.25);
 }
+
+input::placeholder {
+    color: #aaa;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+   ========================= */
+
+.main-button {
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #7a1f1f;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.main-button:hover {
+    background: #4a1212;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   DIVIDER
+   ========================= */
+
+.divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 30px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddd;
+}
+
+.divider span {
+    color: #999;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   REGISTER
+   ========================= */
+
+.register-text {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+.register-button {
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 13px;
+
+    border: 2px solid #7a1f1f;
+
+    border-radius: 7px;
+
+    background: white;
+
+    color: #7a1f1f;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.register-button:hover {
+    background: #7a1f1f;
+
+    color: white;
+}
+
+
+/* =========================
+   MESSAGE
+   ========================= */
 
 #message {
-  margin-top: 15px;
-  text-align: center;
+    text-align: center;
+
+    margin-top: 20px;
+
+    padding: 10px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #6b5b54;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+footer strong {
+    color: #7a1f1f;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 500px) {
+
+    .page {
+        padding: 25px 15px;
+    }
+
+    .school-title {
+        font-size: 20px;
+    }
+
+    .school-subtitle {
+        font-size: 16px;
+    }
+
+    .auth-card {
+        padding: 25px 20px;
+    }
+
+    .card-header h1 {
+        font-size: 24px;
+    }
 }
